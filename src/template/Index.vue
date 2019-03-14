@@ -1,29 +1,24 @@
 <template>
     <div class="container-fluid">
-        <!-- hello world 123
-        <button @click="test" class="btn btn-primary">測試</button>
-        <div>{{result}}</div> -->
-		<h1 class="text-center">Hello World</h1>
-		<hr>
-		<div class="row">
-			<div class="form-group">
-				<label class="col-sm-2">用户名：</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control">
-				</div>
-			</div>
-		</div>
+			<Left></Left>
+			<Right></Right>
     </div>
 </template>
 
 <script>
     var $ = jQuery = require("jquery");
+	var Left = require("./Left.vue").default;
+	var Right = require("./Right.vue").default;
     module.exports={
         data: function() {
             return {
                 result: "bbb",
             }
         },
+		components: {
+			Left,
+			Right,
+		},
         methods: {
             test: function() {
                 // var aaa = document.getElementById("a");
@@ -42,4 +37,7 @@
         }
     }
 </script>
+
+<style scoped>
+</style>
 
