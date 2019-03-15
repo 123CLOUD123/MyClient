@@ -30,12 +30,13 @@
 		padding-left: 300px;
 		z-index: -1;
 		position: relative;
+		padding-top: 0;
 	}
 	div.box {
 		width: 300px;
 		height:200px;
-		margin-top: 20%;
-		margin-left: 30%;
+		margin-top: 30%;
+		margin-left: 50%;
 		transform: translate(-50%, -50%);
 	}
 </style>
