@@ -28,17 +28,43 @@
 </template>
 	
 <script>
-	// var $ = jQuery = require("jquery");
+	var $ = jQuery = require("jquery");
 	module.exports={
 		data: function() {
 			return {
 				username: "",
 				password: "",
+				result: "",
 			}
 		},
 		methods: {
 			login: function() {
 				this.$router.push("/index");
+			},
+			
+			/** 测试 */
+			login: function() {
+			    var _self = this;
+				if (!this.username || !this.password) {
+					alert("未填写完整。");
+					return;
+				}
+			    $.ajax({
+			        type: "post",
+			        url: "api/userResource/login",
+					data: {
+						name: _self.username,
+						password: _self.password,
+					},
+			        success: function(data) {
+						if (data) {
+							alert("登陆成功!");
+						} else {
+							alert("用户不正确");
+						}
+			        }
+			    })
+			   
 			}
 		},
 		
