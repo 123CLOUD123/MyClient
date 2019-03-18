@@ -1,7 +1,6 @@
 <template>
 	<div class="container-fluid bg-primary left">
-		<!-- <h2 class="text-center">Hello</h2> -->
-		<div class="logo">
+		<div class="logo" @click="changePageType(0)">
 			<span class="glyphicon glyphicon-cloud"></span>	
 		</div>
 		

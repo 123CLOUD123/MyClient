@@ -30,6 +30,21 @@
 	div.right {
 		width: 100%;
 		height: 100vh;
+		overflow-y: scroll;
+	}
+	div.right::-webkit-scrollbar {
+		width: 8px;
+        height: 1px;
+	}
+	div.right::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+        box-shadow: inset 0 0 5px #337AB7;
+        background:  dimgray;
+	}
+	div.right::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px black;
+        border-radius: 10px;
+        background: #EDEDED;
 	}
 	.fade-enter {
 		transform: translateY(-100%);

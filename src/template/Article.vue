@@ -10,7 +10,7 @@
 <style scoped>
 	div.main {
 		width: 100%;
-		height: 100vh;
+		height: 150vh;
 		background: #355b828a;
 	}
 </style>
