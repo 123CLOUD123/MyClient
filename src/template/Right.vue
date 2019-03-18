@@ -1,23 +1,27 @@
 <template>
-	<div class="container-fluid right">
-		right component
-		<div class="box bg-primary">
-			
-		</div>
+	<div class="container-fluid right bg-info">
+		<transition name="fade">
+			<Article v-if="pageType==1"></Article>
+			<Goal v-if="pageType==2"></Goal>
+		</transition>
 	</div>
 </template>
 
 <script>
+	var Article = require("./Article.vue").default;
+	var Goal = require("./Goal.vue").default;
 	module.exports={
+		props: ["pageType"],
 		data: function() {
 			return {
 				
 			}
 		},
 		components: {
+			Article,
+			Goal,
 		},
 		methods: {
-			
 		}
 	}
 </script>
@@ -26,17 +30,14 @@
 	div.right {
 		width: 100%;
 		height: 100vh;
-		margin-top : -100vh;
-		padding-left: 300px;
-		z-index: -1;
-		position: relative;
-		padding-top: 0;
 	}
-	div.box {
-		width: 300px;
-		height:200px;
-		margin-top: 30%;
-		margin-left: 50%;
-		transform: translate(-50%, -50%);
+	.fade-enter {
+		transform: translateY(-100%);
+	}
+	.fade-enter-to {
+		transform: translateY(00px);
+	}
+	.fade-enter-active {
+		transition:  .3s;
 	}
 </style>

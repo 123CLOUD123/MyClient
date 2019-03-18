@@ -14,7 +14,7 @@
 						<div class="form-group group2">
 							<label class="col-sm-3 col-xs-3">密码：</label>
 							<div class="col-sm-8 col-xs-8">
-								<input type="password" class="form-control input-lg" v-model="password">
+								<input type="password" class="form-control input-lg" v-model="password" @keyup.enter="login">
 							</div>
 						</div>
 						<div class="form-group group3">
@@ -38,9 +38,9 @@
 			}
 		},
 		methods: {
-			login: function() {
-				this.$router.push("/index");
-			},
+// 			login: function() {
+// 				this.$router.push("/index");
+// 			},
 			
 			/** 测试 */
 			login: function() {
@@ -58,7 +58,10 @@
 					},
 			        success: function(data) {
 						if (data) {
-							alert("登陆成功!");
+							// alert("登陆成功!");
+							// $.cookie("username", data.name);
+							// document.cookie = "username=" + data.name;
+							_self.$router.push("/dashboard");
 						} else {
 							alert("用户不正确");
 						}
@@ -77,6 +80,7 @@
 		height: 100vh;
 		padding-top: 20vh;
 		overflow: hidden;
+		background: dimgrey;
 	}
 	.form {
 		width: 600px;

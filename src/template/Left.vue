@@ -1,15 +1,21 @@
 <template>
-	<div class="container-fluid bg-info left">
-		<ul class="bg-primary">
-			<li>日志</li>
-			<li>日志</li>
-			<li>日志</li>
-			<li>日志</li>
+	<div class="container-fluid bg-primary left">
+		<!-- <h2 class="text-center">Hello</h2> -->
+		<div class="logo">
+			<span class="glyphicon glyphicon-cloud"></span>	
+		</div>
+		
+		<ul>
+			<li class="text-center" @click="changePageType(1)">我 的 日 志
+			</li>
+			<li class="text-center" @click="changePageType(2)">我 的 目 标
+			</li>
 		</ul>
 	</div>
 </template>
 
 <script>
+	var $ = jQuery = require("jquery");
 	module.exports={
 		data: function() {
 			return {
@@ -17,32 +23,54 @@
 			}
 		},
 		methods: {
-			
+			changePageType: function(pageType) {
+				this.$emit("changePageType", pageType);
+			}
 		}
 	}
 </script>
 
-<style>
+<style scoped>
 	div.left {
 		height: 100vh;
-		width: 275px;
-		margin: 0px;
-		z-index: 2;
+		width: 100%;
 	}
 	ul {
-		height: 80vh;
-		margin-top:10vh;
-		padding-left: 0;
+		margin-top: 40px;
+		padding-left: 0px;
 	}
 	li {
-		height: 20vh;
-		background: #555555;
-		line-height: 20vh;
-		list-style-type: none;
-		text-align: center;
-		border-bottom: 1px solid black;
+		font-size: 1.2em;
+		list-style: none;
+		/* list-style-position: inside; */
+		font-weight: bold;
+		height: 40px;
+		line-height: 40px;
+		transition: .2s;
 	}
 	li:hover {
-		background: darkgray;
+		cursor:  pointer;
+		border-bottom: 1px solid white;
+		transform: scale(1.2);
+	}
+	div.logo{
+		font-size: 6em;
+		text-align: center;
+		margin-top: 20px;
+		animation:go 3s infinite;
+	}
+	div.logo:hover {
+		cursor: pointer;
+	}
+	@keyframes go {
+		0 {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.2);
+		}
+		100% {
+			transform: scale(1);
+		}
 	}
 </style>
