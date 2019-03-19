@@ -5,9 +5,13 @@
 		</div>
 		
 		<ul>
-			<li class="text-center" @click="changePageType(1)">我 的 日 志
+			<li class="text-center" @click="changePageType(1)">
+				<span class="glyphicon glyphicon-book"></span>&ensp;
+				我的日志
 			</li>
-			<li class="text-center" @click="changePageType(2)">我 的 目 标
+			<li class="text-center" @click="changePageType(2)">
+				<span class="glyphicon glyphicon-flag"></span>&ensp;
+				我的目标
 			</li>
 		</ul>
 	</div>
