@@ -1,6 +1,6 @@
 <template>
 	<div class="container-fluid main">
-		目标
+		目标 
 	</div>
 </template>
 
